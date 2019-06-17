@@ -42,7 +42,7 @@ import datetime
 args_permutations = {
     "amount_other": ["666"],
     "donation_type": ["recurring", "single"],
-    "payment_hash": ["abc123"],
+    "payment_hash": ["305342787"],
     "suggested_ask": ["20", "666"],
 }
 
@@ -54,7 +54,7 @@ def user(recurring=1, payment_hash=False, customfields=None, previous_recurring=
         }
     userbase = {
         "user": {
-            "akid": 666,
+            "akid": '.18715613.pOX3Jq',
             "id": 666,
             "name": "Morticia Addams",
             "first_name": "Morticia",
@@ -69,7 +69,7 @@ def user(recurring=1, payment_hash=False, customfields=None, previous_recurring=
     }
     if payment_hash:
         userbase['user'].update({
-            'payment_hash': 'abc123abc123',
+            'payment_hash': '305342787',
             'has_payment_token': True,
         })
         if not previous_recurring:
@@ -238,6 +238,8 @@ contexts = {
     'donate.16': compose([base('weekly recurring checkbox', layout="make_weekly_checkbox")]),
     'donate.17': compose([base('quickpay', entity='pac', layout='donate_5050_split'), user(0, payment_hash=True), candidates], ["payment_hash"], -1),
     'donate.18': compose([base('quickpay', entity='pac', layout='donate_5050_split donation_no_checkbox'), user(0, payment_hash=True), candidates], ["payment_hash"], -1),
+    'donate.19': compose([base('weekly recurring checkbox', layout="make_weekly_checkbox")]),
+    'donate.20': compose([base('civ', entity='c3')]),
     'donate.thanks.1': compose([base('civ with payment_hash', filename='thanks.html'), user(0, payment_hash=True), order()]),
     'donate.thanks.2': compose([base('recurring civ', entity='pac', filename='thanks.html'),
                                 user(), order('orderrecurring')]),
