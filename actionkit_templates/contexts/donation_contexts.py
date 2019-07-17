@@ -264,5 +264,5 @@ contexts = {
                                     ],
                                     'other_amount': 2.07
                                 })]),
-
+    'donate.thanks.8': compose([base('civ with payment_hash', filename='thanks.html'), user(0, payment_hash=True, customfields={'apple_pay':'1'}), order()]),
 }
